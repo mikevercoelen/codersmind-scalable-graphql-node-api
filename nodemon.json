@@ -1,0 +1,13 @@
+{
+  "ignore": [
+    ".git",
+    "node_modules",
+    "package.json",
+    "test"
+  ],
+  "ext": "js json",
+  "watch": [
+    "src",
+    ".env"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "name": "codersmind-scalable-graphql-node-api",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon src/index.js --exec \"node --preserve-symlinks -r dotenv/config\"",
+    "test": "NODE_ENV=mocha mocha --timeout=10000 --preserve-symlinks -r dotenv/config --recursive './{,!(node_modules)/**}/*.test.js'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm test"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "engines": {
+    "node": "10.15.0",
+    "npm": "6.6.0"
+  },
+  "dependencies": {
+    "apollo-server-express": "^2.4.0",
+    "bcrypt": "^3.0.4",
+    "deepmerge": "^3.1.0",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "graphql": "^14.1.1",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.4.10",
+    "throng": "^4.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "expect": "^24.1.0",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.3",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.9",
+    "sinon": "^7.2.3",
+    "supertest": "^3.4.2"
+  }
+}
